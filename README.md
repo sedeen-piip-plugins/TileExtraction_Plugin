@@ -11,7 +11,7 @@ This Plug-in has been implemented by Azadeh Yazanpanah in Visual Studio C++ 2012
 2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
 ![alt text][logo]
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[logo]: https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/TileExtraction_1.png "Logo Title Text 2"
 
 3.	Now the user should be able to tune the parameters and run the “Tile Extraction” plug-in. 
 4.  Clicking on the Run button will execute the algorithm. The extracted tiles are shown as an overlay over the image.
