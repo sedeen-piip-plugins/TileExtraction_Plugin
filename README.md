@@ -13,7 +13,7 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
 
 <p align="center">
-  ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png)
+  <img /> ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png) 
 
   *Fig1. The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up menu.*
 </p>
