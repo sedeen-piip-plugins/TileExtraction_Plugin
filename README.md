@@ -16,7 +16,7 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
   <img src="https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png" alt="Sublime's custom image"/>
 </p>
 <p align="center">
-  *Fig1. The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up menu.*
+  ###### Fig1. The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up menu.
 </p>
 
 3.  Clicking on the Run button will execute the algorithm with the default parameters. The extracted tiles are shown as an overlay rectangles over the image.
