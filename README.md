@@ -19,8 +19,7 @@ The extracted tiles will be saved with this naming format slideName_centreX_cent
 An “.xml” file will be created to keep the coordinates of each patch at the full digital resolution with this naming format slideName_ session.xml (for example: 99797_ session.xml).
 
 
-#Authors
-*Azadeh Yazanpanah
-
+# Authors
+* Azadeh Yazanpanah
 TileExtraction plugin has been developed by Martel lab at Sunnybrook Research Institute (SRI), University of Toronto.
 [Funding provided by NIH.](https://itcr.nci.nih.gov/funded-project/pathology-image-informatics-platform-visualization-analysis-and-management)
