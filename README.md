@@ -8,9 +8,12 @@ This Plug-in has been implemented by Azadeh Yazanpanah in Visual Studio C++ 2012
 
 ## User Guild
 1.	Open the WSI image. 
-2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms (Fig 1.)
-3.	Now the user should be able to tune the parameters and run the “Tile Extraction” plug-in.
-4.  
+2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
+![alt text][logo]
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+
+3.	Now the user should be able to tune the parameters and run the “Tile Extraction” plug-in. 
 4.  Clicking on the Run button will execute the algorithm. The extracted tiles are shown as an overlay over the image.
 5. Use the "Intermediate result" option to see the results of tissue finder algorithm and modify the results using the “Window Size” and “Threshold” parameters. The window size is the kernel size used to perform morphological operation withen the tissue finder algorithm. The Threshold value is in the range 0.0 to 1.0. It eliminate The tissue area with the size less than the threshold value.
 6. "Save Tiles" option allows the user to modify the results before saving the patches. The patches will be saved only and only the “Save Tiles” option set to be “ON”. The user will select the directory and the tile name in the pop up window if “Save Tile” option set to be “ON”.
