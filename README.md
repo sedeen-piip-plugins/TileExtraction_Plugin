@@ -1,6 +1,6 @@
 <p align="center">
 
-  <h3 align="center">TileExtraction_Plugin</h3>
+  <h3 align="center">TileExtraction Plugin</h3>
 </p>
 
 Tile extraction plugin retrieves uniformly spaced tile images based on principles of stereology. This plugin is useful for sampling a large image for training, auto-encoders applications, etc.
@@ -12,6 +12,9 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 1.	Open the WSI image in Sedeen Viewer. 
 2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
 
+<p align="center">
+  <img /> https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png
+</p>
 <p align="center">
   <img align="center"> ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png) <img/>
 
