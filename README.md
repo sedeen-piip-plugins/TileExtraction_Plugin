@@ -21,5 +21,6 @@ An “.xml” file will be created to keep the coordinates of each patch at the 
 
 # Authors
 * Azadeh Yazanpanah
+
 TileExtraction plugin has been developed by Martel lab at Sunnybrook Research Institute (SRI), University of Toronto.
 [Funding provided by NIH.](https://itcr.nci.nih.gov/funded-project/pathology-image-informatics-platform-visualization-analysis-and-management)
