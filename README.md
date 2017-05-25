@@ -16,7 +16,7 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 1.	Open the WSI image in Sedeen Viewer. 
 2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
 
-![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png "Fig1. and the Analysis Manager view. The “Tile Extraction” plug-in is appeared in the algorithm pop up menu.")
+![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png "Fig1. and the Analysis Manager view. The Tile Extraction plugin is appeared in the algorithm pop up menu.")
 
 3.  Clicking on the Run button will execute the algorithm with the default parameters. The extracted tiles are shown as an overlay rectangles over the image.
 4.  Use the "Intermediate result" option to see the results of tissue finder algorithm and modify the results using the “Window Size” and “Threshold” parameters. The window size is the kernel size used to perform morphological operation in the tissue finder algorithm. The Threshold value is in the range 0.0 to 1.0. It eliminate The tissue area with the size less than the threshold value.
