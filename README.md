@@ -16,6 +16,7 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 1.	Open the WSI image in Sedeen Viewer. 
 2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
 
+<div style="text-align:center"><img src ="https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png" /></div>
 ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png)
 
 *Fig1. The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up menu.*
