@@ -8,7 +8,7 @@ Background tiles (i.e. fat tissue ) are eliminated using the existing tissue fin
 User can modify the results of tissue finder algorithm by tuning the “Window Size” and “Threshold” parameters.
 Patches can be saved in different resolutions, and an “.xml” file will be created to keep the coordinate of each patches at the full digital resolution.
 
-## User Guild
+## User Manual
 1.	Open the WSI image in Sedeen Viewer. 
 2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
 
@@ -40,3 +40,5 @@ An “.xml” file will be created to keep the coordinates of each patch at the 
 
 TileExtraction plugin has been developed by Martel lab at Sunnybrook Research Institute (SRI), University of Toronto.
 [Funding provided by NIH.](https://itcr.nci.nih.gov/funded-project/pathology-image-informatics-platform-visualization-analysis-and-management)
+
+## Copyright & License
