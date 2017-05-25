@@ -12,7 +12,8 @@
   </p>
 </p>
 
-<br># TileExtraction_Plugin
+<br>
+
 Tile extraction plugin retrieves uniformly spaced tile images based on principles of stereology. This plugin is useful for sampling a large image for training, auto-encoders applications, etc.
 Background tiles (i.e. fat tissue ) are eliminated using the existing tissue finder plugin.
 User can modify the results of tissue finder algorithm by tuning the “Window Size” and “Threshold” parameters.
