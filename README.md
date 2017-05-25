@@ -9,9 +9,7 @@ This Plug-in has been implemented by Azadeh Yazanpanah in Visual Studio C++ 2012
 ## User Guild
 1.	Open the WSI image. 
 2.	Load the “TileEXtraction” plugin from the pulldown list of Algorithms.
-![Analysis Manager view][Fig1]
-
-[Fig1]: https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png "Fig1 Analysis Manager view"
+![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png)
 
 3.	Now the user should be able to tune the parameters and run the “Tile Extraction” plug-in. 
 4.  Clicking on the Run button will execute the algorithm. The extracted tiles are shown as an overlay over the image.
