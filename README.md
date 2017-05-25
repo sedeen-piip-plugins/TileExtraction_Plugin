@@ -17,3 +17,10 @@ This Plug-in has been implemented by Azadeh Yazanpanah in Visual Studio C++ 2012
 7. Also, the algorithm detects the hierarchical resolutions of the loaded image and presents them in “Resolution” combo box. The user can select the desired resolution to save the patches.
 The extracted tiles will be saved with this naming format slideName_centreX_centreY_resolution.tif (for example: 99797_23090_18015_0.tif). (See Figure 3)
 An “.xml” file will be created to keep the coordinates of each patch at the full digital resolution with this naming format slideName_ session.xml (for example: 99797_ session.xml).
+
+
+#Authors
+*Azadeh Yazanpanah
+
+TileExtraction plugin has been developed by Martel lab at Sunnybrook Research Institute (SRI), University of Toronto.
+[Funding provided by NIH.](https://itcr.nci.nih.gov/funded-project/pathology-image-informatics-platform-visualization-analysis-and-management)
