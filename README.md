@@ -1,18 +1,10 @@
 
 
 <p align="center">
-  <a href="https://pathcore.com/">
-    <img src="http://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width=72 height=72>
-  </a>
-
+  
   <h3 align="center">TileExtraction_Plugin</h3>
 
   <p align="center">
-
-  </p>
-</p>
-
-<br>
 
 Tile extraction plugin retrieves uniformly spaced tile images based on principles of stereology. This plugin is useful for sampling a large image for training, auto-encoders applications, etc.
 Background tiles (i.e. fat tissue ) are eliminated using the existing tissue finder plugin.
