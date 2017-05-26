@@ -14,17 +14,19 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 </div>
 
 <div align="right">
-  <strong>Fig1.</strong><sub>The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up      menu.</sub>
+  <sub> <strong>Fig1.</strong> The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up      menu.</sub>
 </div>
+
 
 3.  Clicking on the Run button will execute the algorithm with the default parameters. The extracted tiles are shown as an overlay rectangles over the image.
 4.  Use the "Intermediate result" option to see the results of tissue finder algorithm and modify the results using the “Window Size” and “Threshold” parameters. The window size is the kernel size used to perform morphological operation in the tissue finder algorithm. The Threshold value is in the range 0.0 to 1.0. It eliminate The tissue area with the size less than the threshold value.
 
 ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_2.png)
 
-<div align="right">
-  <strong>Fig2.</strong><sub>Displaying the retrieved tile images.</sub>
+<div align="center">
+  <sub><strong>Fig2.</strong> Displaying the retrieved tile images.</sub>
 </div>
+
 
 5.  "Save Tiles" option allows the user to modify the results before saving the patches. The patches will be saved only and only the “Save Tiles” option set to be “ON”. The user will select the directory and the tile name in the pop up window if “Save Tile” option set to be “ON”.
 6.  Also, the algorithm detects the hierarchical resolutions of the loaded image and presents them in “Resolution” combo box. The user can select the desired resolution to save the patches.
@@ -35,7 +37,7 @@ An “.xml” file will be created to keep the coordinates of each patch at the 
 
 ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_3.png)
 <div align="center">
-  <strong>Fig3.</strong> <sub>Displaying the retrieved tile images saved to the hard drive and the associated “.xml” file.</sub>
+  <sub><strong>Fig3.</strong> Displaying the retrieved tile images saved to the hard drive and the associated “.xml” file.</sub>
 </div>
 
 
