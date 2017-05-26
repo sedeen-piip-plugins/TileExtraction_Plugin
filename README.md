@@ -1,4 +1,4 @@
-<h3 align="center">TileExtraction Plugin</h3>
+<h1 align="center">TileExtraction Plugin</h1>
   
 Tile extraction plugin retrieves uniformly spaced tile images based on principles of stereology. This plugin is useful for sampling a large image for training, auto-encoders applications, etc.
 Background tiles (i.e. fat tissue ) are eliminated using the existing tissue finder plugin.
@@ -13,7 +13,7 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
   <img src="https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png"/>
 </div>
 <div align="center">
-  <sub> <strong>Fig1.</strong> The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up      menu.</sub>
+  <h6> <strong>Fig1.</strong> The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up      menu.</h6>
 </div>
 
 
@@ -22,7 +22,7 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 
 ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_2.png)
 <div align="center">
-  <sub><strong>Fig2.</strong> Displaying the retrieved tile images.</sub>
+  <h6><strong>Fig2.</strong> Displaying the retrieved tile images.</h6>
 </div>
 
 
@@ -35,7 +35,7 @@ An “.xml” file will be created to keep the coordinates of each patch at the 
 
 ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_3.png)
 <div align="center">
-  <sub><strong>Fig3.</strong> Displaying the retrieved tile images saved to the hard drive and the associated “.xml” file.</sub>
+  <h6><strong>Fig3.</strong> Displaying the retrieved tile images saved to the hard drive and the associated “.xml” file.</h6>
 </div>
 
 
