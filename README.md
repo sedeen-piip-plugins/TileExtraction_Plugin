@@ -12,8 +12,7 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 <div align="center">
   <img src="https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_1.png"/>
 </div>
-
-<div align="right">
+<div align="center">
   <sub> <strong>Fig1.</strong> The Analysis Manager view. The "Tile Extraction plugin" is appeared in the algorithm pop up      menu.</sub>
 </div>
 
@@ -22,7 +21,6 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 ##### 4.  Use the "Intermediate result" option to see the results of tissue finder algorithm and modify the results using the “Window Size” and “Threshold” parameters. The window size is the kernel size used to perform morphological operation in the tissue finder algorithm. The Threshold value is in the range 0.0 to 1.0. It eliminate The tissue area with the size less than the threshold value.
 
 ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_2.png)
-
 <div align="center">
   <sub><strong>Fig2.</strong> Displaying the retrieved tile images.</sub>
 </div>
