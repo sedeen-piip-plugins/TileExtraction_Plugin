@@ -1,7 +1,3 @@
-<div align="center">
-<img src="https://github.com/sedeen-piip-plugins/StainAnalysis-plugin/blob/master/Images/PIIP_SRI_2.gif"  height="200" width="300"/>
-</div>
-
 <h1 align="center">TileExtraction Plugin</h1>
   
 Tile extraction plugin retrieves uniformly spaced tile images based on principles of stereology. This plugin is useful for sampling a large image for training, auto-encoders applications, etc.
