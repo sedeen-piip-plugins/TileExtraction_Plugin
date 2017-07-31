@@ -1,4 +1,4 @@
-#include "plugins\TileExtraction\TileExtraction.h"
+#include "TileExtraction.h"
 
 // DPTK headers
 #include "Algorithm.h"
