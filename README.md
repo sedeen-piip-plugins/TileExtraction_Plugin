@@ -38,7 +38,7 @@ An “.xml” file will be created to keep the coordinates of each patch at the 
   <h6><strong>Fig3.</strong> Displaying the retrieved tile images saved to the hard drive and the associated “.xml” file.</h6>
 </div>
 
-##### 7.  Users can export the patches by selecting the "Export" button at the top of the "Overlay manager". This way the overlay rectangles will be saved as annotated regions in Sedeen format so then the users can apply another plugin on selected one. For example, users can apply "TileExtraction" plugin to extract the desirable regions and then apply the "Stain Analysis" plugin on the selected regions or even chain more than 2 pluging to provide a specific workflow.
+##### 7.  Users can export the patches by selecting the "Export" button at the top of the "Overlay manager". This way the overlay rectangles will be saved as annotated regions in Sedeen format so then the users can apply another plugin on selected one. For example, users can apply "TileExtraction" plugin to extract the desirable regions and then apply the "Stain Analysis" plugin on the selected regions or even chain more than 2 pluging to provide a specific workflow. (See Fig.4)
 
 ![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_new_1.png)
 <div align="center">
