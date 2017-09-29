@@ -20,13 +20,13 @@ Patches can be saved in different resolutions, and an “.xml” file will be cr
 ##### 3.  Clicking on the Run button will execute the algorithm with the default parameters. The extracted tiles are shown as an overlay rectangles over the image.
 ##### 4.  Use the "Intermediate result" option to see the results of tissue finder algorithm and modify the results using the “Window Size” and “Threshold” parameters. The window size is the kernel size used to perform morphological operation in the tissue finder algorithm. The Threshold value is in the range 0.0 to 1.0. It eliminate The tissue area with the size less than the threshold value.
 
-![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_2.png)
+![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_new_2.png)
 <div align="center">
   <h6><strong>Fig2.</strong> Displaying the retrieved tile images.</h6>
 </div>
 
 
-##### 5.  "Save Tiles" option allows the user to modify the results before saving the patches. The patches will be saved only and only the “Save Tiles” option set to be “ON”. The user will select the directory and the tile name in the pop up window if “Save Tile” option set to be “ON”.
+##### 5.  "Save Tiles" option allows the user to modify the results before saving the patches. The patches will be saved only and only the “Save Tiles” option set to be “ON”. The user will select the directory and the tile base name by specifying the "Directory To Save Tiles" parameters. 
 ##### 6.  Also, the algorithm detects the hierarchical resolutions of the loaded image and presents them in “Resolution” combo box. The user can select the desired resolution to save the patches.
 
 The extracted tiles will be saved with this naming format slideName_centreX_centreY_resolution.tif (for example: 99797_23090_18015_0.tif). (See Fig.3)
@@ -38,6 +38,12 @@ An “.xml” file will be created to keep the coordinates of each patch at the 
   <h6><strong>Fig3.</strong> Displaying the retrieved tile images saved to the hard drive and the associated “.xml” file.</h6>
 </div>
 
+##### 7.  Users can export the patches by selecting the "Export" button at the top of the "Overlay manager". This way the overlay rectangles will be saved as annotated regions in Sedeen format so then the users can apply another plugin on selected one. For example, users can apply "TileExtraction" plugin to extract the desirable regions and then apply the "Stain Analysis" plugin on the selected regions or even chain more than 2 pluging to provide a specific workflow.
+
+![Analysis Manager view](https://github.com/sedeen-piip-plugins/TileExtraction_Plugin/blob/master/Images/TileExtraction_new_1.png)
+<div align="center">
+  <h6><strong>Fig4.</strong> Displaying the overlay manager and export option.</h6>
+</div>
 
 ## Authors
 TileExtraction plugin was developed by **Azadeh Yazanpanah**, Martel lab at Sunnybrook Research Institute (SRI), University of Toronto and was partially funded by [NIH grant.](https://itcr.nci.nih.gov/funded-project/pathology-image-informatics-platform-visualization-analysis-and-management)
