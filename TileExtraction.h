@@ -4,6 +4,7 @@
 // System headers
 #include <memory>
 #include <Windows.h>
+#include "QtWidgets\qmessagebox.h"
 #include <fstream>
 
 // DPTK headers - a minimal set
@@ -140,6 +141,8 @@ class TileExtraction : public AlgorithmBase {
   /// Parameter for selecting to save the tiles
   OptionParameter save_option_;
 
+  SaveFileDialogParameter saveFileDialogParam_;
+
    /// The intermediate image factory after channel selection 
   std::shared_ptr<image::tile::Factory> channel_factory_;
 
@@ -168,20 +171,6 @@ class TileExtraction : public AlgorithmBase {
   double scaleResolution_;
 
 };
-
-//std::vector<std::string> fillVector()
-//{
-//	std::vector<std::string> list;
-//	list.push_back("5X");
-//	list.push_back("10X");
-//	list.push_back("20X");
-//	list.push_back("40X");
-//	list.push_back("80X");
-//
-//	return list;
-//}
-//
-//const std::vector<std::string> TileExtraction::resolutionList_ = fillVector();
 
 } // namespace algorithm
 } // namespace sedeen

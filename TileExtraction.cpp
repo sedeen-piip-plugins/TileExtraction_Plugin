@@ -1,4 +1,4 @@
-#include "TileExtraction.h"
+#include "plugins\TileExtraction\TileExtraction.h"
 
 // DPTK headers
 #include "Algorithm.h"
@@ -30,12 +30,12 @@ TileExtraction::TileExtraction()
       scale_(1.0),
 	  scaleResolution_(4.0),
 	  display_area_(),
-	  //behavior_(image::tile::Threshold::RETAIN_BRIGHTER),
 	  window_size_(),
 	  threshold_(),
 	  numResolutionLevel_(),
 	  ResolutionLevel_(),
 	  save_option_(),
+	  saveFileDialogParam_(),
 	  output_option_(),
 	  channel_factory_(),
       threshold_factory_(),
@@ -69,7 +69,7 @@ void TileExtraction::run() {
 		}
 	}
 
-	if (output_option_.isChanged()) {
+	if (output_option_.isChanged() || pipeline_changed) {
 		updateIntermediateResult();
 	}
 
@@ -191,6 +191,42 @@ void TileExtraction::init(const image::ImageHandle& input_image) {
 		save_options,
 		false);   // option list
 
+	file::FileDialogOptions fileDialogOptions;
+	file::FileDialogFilter fileDialogFilter;
+	fileDialogFilter.name = "TIFF(*.tif)";
+	/*fileDialogFilter.name = "Images:";
+	fileDialogFilter.extensions.push_back("tif");
+	fileDialogFilter.extensions.push_back("jpg");
+	fileDialogFilter.extensions.push_back("png");
+	fileDialogFilter.extensions.push_back("bmp");*/
+	fileDialogOptions.filters.push_back(fileDialogFilter);
+
+	fileDialogFilter.name = "JPEG(*.jpg)";
+	/*fileDialogFilter.extensions.clear();
+	fileDialogFilter.extensions.push_back("jpg");
+	fileDialogFilter.extensions.push_back("jpeg");
+	fileDialogFilter.extensions.push_back("jpe");*/
+	fileDialogOptions.filters.push_back(fileDialogFilter);
+
+	fileDialogFilter.name = "PNG(*.png)";
+	/*fileDialogFilter.extensions.clear();
+	fileDialogFilter.extensions.push_back("png");*/
+	fileDialogOptions.filters.push_back(fileDialogFilter);
+
+	fileDialogFilter.name = "Bitmap Files(*.bmp)";
+	/*fileDialogFilter.extensions.clear();
+	fileDialogFilter.extensions.push_back("bmp");*/
+	fileDialogOptions.filters.push_back(fileDialogFilter);	
+		
+	fileDialogOptions.startDir = input_image->getMetaData()->get(image::StringTags::SOURCE_DESCRIPTION, 0);
+	fileDialogOptions.flags = file::FileDialogFlags::MultiSelect;
+	
+	saveFileDialogParam_ = sedeen::algorithm::createSaveFileDialogParameter(*this,
+		"Directory To Save Tiles",
+		"description",
+		fileDialogOptions,
+		false);
+
 	// Create output option list and bind member to UI
 	std::vector<std::string> compute_options;
 	compute_options.push_back("None");
@@ -293,11 +329,23 @@ bool TileExtraction::buildPipeline(int threshold) {
 
 	if ( parametersChanged() && (int)save_option_ ) 
 	{
-		std::string path_to_image = 
+		//QMessageBox msgBox;
+
+		sedeen::algorithm::parameter::SaveFileDialog::DataType saveFileDialogDataType = saveFileDialogParam_;
+		m_roi_file_name = saveFileDialogDataType.getFilename();
+		if (!saveFileDialogParam_.isUserDefined() || m_roi_file_name.empty())
+		{
+			/*msgBox.setText("Out put directory not set.");
+			int ret = msgBox.exec();*/
+			throw std::runtime_error("Please select a directory to save tiles!");			
+		}
+			
+
+		/*std::string path_to_image = 
 			image()->getMetaData()->get(image::StringTags::SOURCE_DESCRIPTION, 0);
 		auto found = path_to_image.find_last_of(".");
 		m_path_to_root = path_to_image.substr(0, found);
-		m_roi_file_name = openFile(m_path_to_root);
+		m_roi_file_name = openFile(m_path_to_root);*/
 
 		pipeline_changed = true;
 	}
@@ -521,12 +569,18 @@ void TileExtraction::drawTileBox()
 				
 					Rect tile = Rect(top_left_selectedRes, downsample_size);
 					image::RawImage imageResolution = compositor->getImage(selectedResolution, tile);					
-					
+				
 					if((int)save_option_)
 					{
-						imageResolution.save(m_roi_file_name+ "_" + std::to_string((int)(top_left.getX()+ box_width_/2)) + "_" 
+						//auto extensionList = fileDialogOptions_.selectedFilter;
+						auto p = m_roi_file_name.find_last_of('.');
+						std::string base_name;
+						p >0 && p != std::string::npos ? base_name = m_roi_file_name.substr(0, m_roi_file_name.rfind(".")) : 
+																	 m_roi_file_name = m_roi_file_name;
+						std::string extension =  m_roi_file_name.substr(m_roi_file_name.rfind("."));
+						imageResolution.save(base_name + "_" + std::to_string((int)(top_left.getX()+ box_width_/2)) + "_" 
 							+ std::to_string((int)(top_left.getY()+ box_width_/2)) + "_" 
-							+ ResolutionList_.at(selectedResolution) + ".tif"); //std::to_string(selectedResolution)
+							+ ResolutionList_.at(selectedResolution) + extension); //std::to_string(selectedResolution)
 
 						//XML file
 						GraphicInfo roi_info;
@@ -554,27 +608,45 @@ void TileExtraction::drawTileBox()
 
 std::string TileExtraction::openFile(std::string path)
 {
-	OPENFILENAME ofn;
-	char szFileName[MAX_PATH]="";
-	//WCHAR szFileName[MAX_PATH]= L"";
+
+	OPENFILENAME ofn;       // common dialog box structure
+    char szFile[MAX_PATH] ="";       // buffer for file name
+    HWND hwnd = NULL;              // owner window
+ 
+    // Initialize OPENFILENAME
+    ZeroMemory(&ofn, sizeof(ofn));
+    ofn.lStructSize = sizeof(ofn);
+    ofn.hwndOwner = hwnd;
+    ofn.lpstrFile = szFile;
 	const std::string temp_str = m_path_to_root.substr(m_path_to_root.find_last_of("/\\") + 1);
 	auto p = temp_str.find_last_of('.');
 	std::string base_name;
 	p >0 && p != std::string::npos ? base_name = temp_str.substr(0, temp_str.rfind(".")) : base_name = temp_str;
-	std::copy( std::begin(base_name), std::begin(base_name) + std::min(base_name.size(), sizeof(szFileName)), 
-				std::begin(szFileName));
-
-	ZeroMemory(&ofn, sizeof(ofn));
-	ofn.lStructSize = sizeof(ofn); 
-	ofn.hwndOwner = NULL;
-	ofn.lpstrFilter = "*.tif";
-	//ofn.lpstrFilter = "*.jpg;*.jpeg;*.tif;*.png;*.bmp";
-	ofn.lpstrFile = (LPSTR)szFileName;
-	ofn.nMaxFile = MAX_PATH;
-	ofn.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
-	//ofn.lpstrDefExt = (LPSTR)L"tif";
-	ofn.lpstrInitialDir = (LPSTR) m_path_to_root.c_str();
-	GetSaveFileName(&ofn);
+	std::copy( std::begin(base_name), std::begin(base_name) + std::min(base_name.size(), sizeof(szFile)), 
+				std::begin(szFile));
+    //
+    // Set lpstrFile[0] to '\0' so that GetSaveFileName does not 
+    // use the contents of szFile to initialize itself.
+    //
+    //ofn.lpstrFile[0] = '\0';
+    ofn.nMaxFile = sizeof(szFile);
+    ofn.lpstrFilter = "TIFF(*.tif)\0*.tif;*.tiff\0"
+					  "JPEG(*.jpeg)\0*.jpeg\0"
+					  "PNG(*.png)\0*.png\0"
+					  "Bitmap Files(*.bmp)\0*.bmp\0";
+    ofn.nFilterIndex = 1;
+    ofn.lpstrFileTitle = NULL;
+    ofn.nMaxFileTitle = 0;
+    ofn.lpstrInitialDir = (LPSTR) m_path_to_root.c_str();
+    ofn.Flags = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_EXPLORER;
+	ofn.lpstrDefExt = "tif";
+ 
+    // Display the Open dialog box. 
+ 
+    if (GetSaveFileName(&ofn)==TRUE)
+	{
+		return ofn.lpstrFile;
+	}
 
 	return ofn.lpstrFile;
 }
