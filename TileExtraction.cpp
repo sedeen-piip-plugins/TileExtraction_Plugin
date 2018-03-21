@@ -272,7 +272,7 @@ bool TileExtraction::buildPipeline(int threshold) {
 	//
 	if (nullptr == channel_factory_) {
 		auto source_factory = image()->getFactory();
-		auto source_color = source_factory->getColor();
+		auto source_color = source_factory->getColorSpace();
 
 		// Create a channel select kernel
 		auto kernel = std::make_shared<ChannelSelect>(channel_index_, source_color);
@@ -363,7 +363,7 @@ int TileExtraction::getOptimalThreshold() {
 
 	// Get image source
 	auto source_factory = image()->getFactory();
-	auto source_color = source_factory->getColor();
+	auto source_color = source_factory->getColorSpace();
 
 	// build kernel
 	auto kernel = 
@@ -529,7 +529,7 @@ void TileExtraction::drawTileBox()
 				while( (idx_x < (int)bottom_right_scaled.getX()) && (idx_x < downsample_size_.width()) && (idx_x >= 0) )
 				{
 					if (askedToStop()) break;
-					sum += update_image.at(idx_x, idx_y, 0);
+					sum += update_image.at(idx_x, idx_y, 0).as<double>();
 					idx_x++;
 				}
 				idx_y++;
