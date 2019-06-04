@@ -1,3 +1,27 @@
+/*=============================================================================
+ *
+ *  Copyright (c) 2019 Sunnybrook Research Institute
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ *
+ *=============================================================================*/
+
 #include "TileExtraction.h"
 
 // DPTK headers
@@ -272,7 +296,7 @@ bool TileExtraction::buildPipeline(int threshold) {
 	//
 	if (nullptr == channel_factory_) {
 		auto source_factory = image()->getFactory();
-		auto source_color = source_factory->getColor();
+		auto source_color = source_factory->getColorSpace();
 
 		// Create a channel select kernel
 		auto kernel = std::make_shared<ChannelSelect>(channel_index_, source_color);
@@ -363,7 +387,7 @@ int TileExtraction::getOptimalThreshold() {
 
 	// Get image source
 	auto source_factory = image()->getFactory();
-	auto source_color = source_factory->getColor();
+	auto source_color = source_factory->getColorSpace();
 
 	// build kernel
 	auto kernel = 
@@ -529,7 +553,7 @@ void TileExtraction::drawTileBox()
 				while( (idx_x < (int)bottom_right_scaled.getX()) && (idx_x < downsample_size_.width()) && (idx_x >= 0) )
 				{
 					if (askedToStop()) break;
-					sum += update_image.at(idx_x, idx_y, 0);
+					sum += update_image.at(idx_x, idx_y, 0).as<double>();
 					idx_x++;
 				}
 				idx_y++;
